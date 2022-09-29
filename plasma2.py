@@ -24,8 +24,9 @@ if __name__ == '__main__':
     num_shades = 24
 
     scale = 1
-    num_x = int(40 / scale)
-    num_y = int(30 / scale)
+    window_size = (800, 600)
+    num_x = int(window_size[0] / grid_size / scale)
+    num_y = int(window_size[1] / grid_size / scale)
 
     width = num_x * grid_size
     height = num_y * grid_size
@@ -57,7 +58,7 @@ if __name__ == '__main__':
     lg_range = [1 / 500, 1 / 50]
     sp_range = [-1, 1]
     ps_range = [-1 / 50, 1 / 50]
-    num_effect = 11
+    num_effect = 10
     plasma_params = {}
     for k in range(num_effect):
         plasma_params['planar' + str(k)] = {'params': {'length': np.random.uniform(lg_range[0], lg_range[1]),
